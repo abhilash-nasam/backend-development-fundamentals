@@ -17,15 +17,10 @@ app.get("/about", (req, res) => {
 });
 
 // Route 3: Current date and time
-app.get('/time', (req, res) => {
-  res.send(
-    new Date().toLocaleString('en-IN', {
-      timeZone: 'Asia/Kolkata',
-      dateStyle: 'full',
-      timeStyle: 'medium'
-    })
-  );
+app.get("/time", (req, res) => {
+  res.status(200).send(new Date().toString());
 });
+
 
 // Route 4: Unknown paths
 app.use((req, res) => {
